@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using CSharpFunctionalExtensions;
+using fileorganizer_dotnet.Contracts;
 using MetadataExtractor;
 
-
-namespace fileorganizer_dotnet
+namespace fileorganizer_dotnet.Processors
 {
  public abstract class FileProcessor : IFileProcessor
  {

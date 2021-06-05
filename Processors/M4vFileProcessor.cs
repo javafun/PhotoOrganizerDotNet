@@ -4,11 +4,11 @@ using System.Globalization;
 using System.Linq;
 using MetadataExtractor.Formats.QuickTime;
 
-namespace fileorganizer_dotnet
+namespace fileorganizer_dotnet.Processors
 {
-    public class Mp4FileProcessor : FileProcessor
+    public class M4vFileProcessor : FileProcessor
     {
-        public override string SearchPattern => "*.mp4";
+        public override string SearchPattern => "*.m4v";
 
         public override DateTime? GetOriginalDate(IReadOnlyList<MetadataExtractor.Directory> metadataDict, string file)
         {
@@ -27,7 +27,7 @@ namespace fileorganizer_dotnet
 
         public override string ToString()
         {
-            return nameof(Mp4FileProcessor);
+            return nameof(M4vFileProcessor);
         }
     }
 }

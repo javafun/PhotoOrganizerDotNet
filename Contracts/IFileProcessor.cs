@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using CSharpFunctionalExtensions;
+using fileorganizer_dotnet.Processors;
 
-namespace fileorganizer_dotnet
+namespace fileorganizer_dotnet.Contracts
 {
     public interface IFileProcessor
     {

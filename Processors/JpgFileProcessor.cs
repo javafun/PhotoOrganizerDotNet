@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using MetadataExtractor.Formats.Exif;
 
-namespace fileorganizer_dotnet
+namespace fileorganizer_dotnet.Processors
 {
     public class JpgFileProcessor : FileProcessor
     {

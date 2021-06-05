@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using MetadataExtractor.Formats.QuickTime;
 
-namespace fileorganizer_dotnet
+namespace fileorganizer_dotnet.Processors
 {
     public class MovFileProcessor : FileProcessor
     {
