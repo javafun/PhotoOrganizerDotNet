@@ -9,38 +9,13 @@ namespace fileorganizer_dotnet.Processors
 {
  public abstract class FileProcessor : IFileProcessor
  {
-        public virtual string OutputDirectory
-        {
-            get
-            {
-                return Path.Combine(CurrentDirectory, "output");
-            }
-        }
+        public virtual string OutputDirectory => Path.Combine(CurrentDirectory, "output");
 
-        public virtual string PhotoDirectory
-        {
-            get
-            {
-                return Path.Combine(CurrentDirectory, "photos");
-            }
-        }
+        public virtual string PhotoDirectory => Path.Combine(CurrentDirectory, "photos");
 
-        public virtual string ArchiveDirectory
-        {
-            get
-            {
-                return Path.Combine(CurrentDirectory, OutputDirectory, "archive");
-            }
-        }
+        public virtual string ArchiveDirectory => Path.Combine(CurrentDirectory, OutputDirectory, "archive");
 
-        public virtual string CurrentDirectory
-        {
-            get
-            {
-                return System.IO.Directory.GetCurrentDirectory();
-            }
-        }
-
+        public virtual string CurrentDirectory => System.IO.Directory.GetCurrentDirectory();
 
 
         public class FileProcessResult
@@ -100,7 +75,7 @@ namespace fileorganizer_dotnet.Processors
         public abstract DateTime? GetOriginalDate(IReadOnlyList<MetadataExtractor.Directory> metadataDict, string file);
         public virtual void RelocateFile(DateTime date, string file)
         {
-            string dateFolder = Path.Combine(CurrentDirectory, OutputDirectory, date.Year.ToString(), date.Month.ToString(), date.Day.ToString());
+            string dateFolder = Path.Combine(CurrentDirectory, OutputDirectory, date.Year.ToString("00"), date.Month.ToString("00"), date.Day.ToString("00"));
 
             if (!System.IO.Directory.Exists(dateFolder))
             {
@@ -108,7 +83,6 @@ namespace fileorganizer_dotnet.Processors
             }
             var fileName = Path.GetFileName(file);
             File.Move(file, Path.Combine(dateFolder, fileName));
-            // Console.WriteLine(fileName);
         }
 
         public virtual void ArchiveFile(string file)
